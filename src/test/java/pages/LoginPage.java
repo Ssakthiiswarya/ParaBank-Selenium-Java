@@ -17,6 +17,10 @@ public class LoginPage {
 
     By loginBtn = By.xpath("//input[@value='Log In']");
 
+    By errorMessage = By.className("error");
+
+    By logoutLink = By.linkText("Log Out");
+
     public void enterUsername(String user) {
         driver.findElement(username).sendKeys(user);
     }
@@ -36,5 +40,15 @@ public class LoginPage {
         enterPassword(pass);
 
         clickLogin();
+    }
+
+    public String getErrorMessage() {
+
+        return driver.findElement(errorMessage).getText();
+    }
+
+    public void clickLogout() {
+
+        driver.findElement(logoutLink).click();
     }
 }
