@@ -6,6 +6,7 @@ import org.testng.annotations.Test;
 import pages.BillPayPage;
 import pages.LoginPage;
 import pages.RegisterPage;
+import utilities.ConfigReader;
 
 public class FormValidationTest extends BaseTest {
 
@@ -38,7 +39,10 @@ public class FormValidationTest extends BaseTest {
 
         LoginPage loginPage = new LoginPage(driver);
 
-        loginPage.loginToApplication("john", "demo");
+        loginPage.loginToApplication(
+                ConfigReader.getUsername(),
+                ConfigReader.getPassword()
+        );
 
         BillPayPage billPayPage = new BillPayPage(driver);
 

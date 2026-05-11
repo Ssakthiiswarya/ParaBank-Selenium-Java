@@ -5,6 +5,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.LoginPage;
 import pages.TransactionPage;
+import utilities.ConfigReader;
 
 public class TransactionTest extends BaseTest {
 
@@ -13,7 +14,10 @@ public class TransactionTest extends BaseTest {
 
         LoginPage loginPage = new LoginPage(driver);
 
-        loginPage.loginToApplication("john", "demo");
+        loginPage.loginToApplication(
+                ConfigReader.getUsername(),
+                ConfigReader.getPassword()
+        );
 
         TransactionPage transactionPage = new TransactionPage(driver);
 
@@ -29,7 +33,10 @@ public class TransactionTest extends BaseTest {
 
         LoginPage loginPage = new LoginPage(driver);
 
-        loginPage.loginToApplication("john", "demo");
+        loginPage.loginToApplication(
+                ConfigReader.getUsername(),
+                ConfigReader.getPassword()
+        );
 
         TransactionPage transactionPage = new TransactionPage(driver);
 
@@ -45,7 +52,10 @@ public class TransactionTest extends BaseTest {
 
         LoginPage loginPage = new LoginPage(driver);
 
-        loginPage.loginToApplication("john", "demo");
+        loginPage.loginToApplication(
+                ConfigReader.getUsername(),
+                ConfigReader.getPassword()
+        );
 
         TransactionPage transactionPage = new TransactionPage(driver);
 

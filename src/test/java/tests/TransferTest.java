@@ -5,6 +5,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.LoginPage;
 import pages.TransferPage;
+import utilities.ConfigReader;
 
 public class TransferTest extends BaseTest {
 
@@ -13,7 +14,10 @@ public class TransferTest extends BaseTest {
 
         LoginPage loginPage = new LoginPage(driver);
 
-        loginPage.loginToApplication("john", "demo");
+        loginPage.loginToApplication(
+                ConfigReader.getUsername(),
+                ConfigReader.getPassword()
+        );
 
         TransferPage transferPage = new TransferPage(driver);
 
@@ -33,7 +37,10 @@ public class TransferTest extends BaseTest {
 
         LoginPage loginPage = new LoginPage(driver);
 
-        loginPage.loginToApplication("john", "demo");
+        loginPage.loginToApplication(
+                ConfigReader.getUsername(),
+                ConfigReader.getPassword()
+        );
 
         TransferPage transferPage = new TransferPage(driver);
 
@@ -53,7 +60,10 @@ public class TransferTest extends BaseTest {
 
         LoginPage loginPage = new LoginPage(driver);
 
-        loginPage.loginToApplication("john", "demo");
+        loginPage.loginToApplication(
+                ConfigReader.getUsername(),
+                ConfigReader.getPassword()
+        );
 
         TransferPage transferPage = new TransferPage(driver);
 
@@ -73,7 +83,10 @@ public class TransferTest extends BaseTest {
 
         LoginPage loginPage = new LoginPage(driver);
 
-        loginPage.loginToApplication("john", "demo");
+        loginPage.loginToApplication(
+                ConfigReader.getUsername(),
+                ConfigReader.getPassword()
+        );
 
         TransferPage transferPage = new TransferPage(driver);
 

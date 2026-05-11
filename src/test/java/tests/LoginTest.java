@@ -5,6 +5,7 @@ import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import pages.LoginPage;
+import utilities.ConfigReader;
 
 public class LoginTest extends BaseTest {
 
@@ -13,15 +14,24 @@ public class LoginTest extends BaseTest {
 
         return new Object[][]{
 
-                {"sakthi", "wrongpass"},
+                {
+                        ConfigReader.getUsername(),
+                        ConfigReader.getPassword(),
+                        true
+                },
 
-                {"wronguser", "pass123"}
+                {
+                        ConfigReader.getUsername(),
+                        "wrongpass",
+                        false
+                }
         };
     }
 
     @Test(dataProvider = "loginData")
     public void testLogin(String username,
-                          String password) {
+                          String password,
+                          boolean validLogin) {
 
         LoginPage loginPage = new LoginPage(driver);
 
@@ -29,6 +39,13 @@ public class LoginTest extends BaseTest {
 
         String currentUrl = driver.getCurrentUrl();
 
-        Assert.assertNotNull(currentUrl);
+        if (validLogin) {
+
+            Assert.assertNotNull(currentUrl);
+
+        } else {
+
+            Assert.assertFalse(currentUrl.contains("overview"));
+        }
     }
 }

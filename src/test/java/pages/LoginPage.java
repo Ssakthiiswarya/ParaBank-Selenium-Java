@@ -3,11 +3,14 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class LoginPage {
+public class LoginPage extends BasePage {
 
     WebDriver driver;
 
     public LoginPage(WebDriver driver) {
+
+        super(driver);
+
         this.driver = driver;
     }
 
@@ -22,15 +25,18 @@ public class LoginPage {
     By logoutLink = By.linkText("Log Out");
 
     public void enterUsername(String user) {
-        driver.findElement(username).sendKeys(user);
+
+        waitForElement(username).sendKeys(user);
     }
 
     public void enterPassword(String pass) {
-        driver.findElement(password).sendKeys(pass);
+
+        waitForElement(password).sendKeys(pass);
     }
 
     public void clickLogin() {
-        driver.findElement(loginBtn).click();
+
+        waitForElement(loginBtn).click();
     }
 
     public void loginToApplication(String user, String pass) {
@@ -44,11 +50,11 @@ public class LoginPage {
 
     public String getErrorMessage() {
 
-        return driver.findElement(errorMessage).getText();
+        return waitForElement(errorMessage).getText();
     }
 
     public void clickLogout() {
 
-        driver.findElement(logoutLink).click();
+        waitForElement(logoutLink).click();
     }
 }

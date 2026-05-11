@@ -4,6 +4,7 @@ import base.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.LoginPage;
+import utilities.ConfigReader;
 
 public class LogoutTest extends BaseTest {
 
@@ -12,7 +13,10 @@ public class LogoutTest extends BaseTest {
 
         LoginPage loginPage = new LoginPage(driver);
 
-        loginPage.loginToApplication("john", "demo");
+        loginPage.loginToApplication(
+                ConfigReader.getUsername(),
+                ConfigReader.getPassword()
+        );
 
         loginPage.clickLogout();
 

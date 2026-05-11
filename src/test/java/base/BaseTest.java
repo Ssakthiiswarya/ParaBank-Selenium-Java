@@ -3,8 +3,11 @@ package base;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import utilities.ConfigReader;
+
 
 public class BaseTest {
 
@@ -13,19 +16,31 @@ public class BaseTest {
     @BeforeMethod
     public void openBrowser() {
 
-        WebDriverManager.chromedriver().setup();
+        String browser = ConfigReader.getBrowser();
 
-        driver = new ChromeDriver();
+        if (browser.equalsIgnoreCase("chrome")) {
+
+            WebDriverManager.chromedriver().setup();
+
+            driver = new ChromeDriver();
+
+        } else {
+
+            WebDriverManager.firefoxdriver().setup();
+
+            driver = new FirefoxDriver();
+        }
 
         driver.manage().window().maximize();
 
-        driver.get("https://parabank.parasoft.com/parabank/index.htm");
+        driver.get(ConfigReader.getBaseUrl());
     }
 
     @AfterMethod
     public void closeBrowser() {
 
         if (driver != null) {
+
             driver.quit();
         }
     }

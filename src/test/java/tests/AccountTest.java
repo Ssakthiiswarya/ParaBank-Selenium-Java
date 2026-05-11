@@ -4,6 +4,7 @@ import base.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.LoginPage;
+import utilities.ConfigReader;
 
 public class AccountTest extends BaseTest {
 
@@ -12,7 +13,10 @@ public class AccountTest extends BaseTest {
 
         LoginPage loginPage = new LoginPage(driver);
 
-        loginPage.loginToApplication("john", "demo");
+        loginPage.loginToApplication(
+                ConfigReader.getUsername(),
+                ConfigReader.getPassword()
+        );
 
         String currentUrl = driver.getCurrentUrl();
 
@@ -22,6 +26,13 @@ public class AccountTest extends BaseTest {
     @Test
     public void verifyAccountNumberAndBalanceTest() {
 
+        LoginPage loginPage = new LoginPage(driver);
+
+        loginPage.loginToApplication(
+                ConfigReader.getUsername(),
+                ConfigReader.getPassword()
+        );
+
         String pageSource = driver.getPageSource();
 
         Assert.assertNotNull(pageSource);
@@ -30,6 +41,13 @@ public class AccountTest extends BaseTest {
     @Test
     public void verifyAccountDetailsPageTest() {
 
+        LoginPage loginPage = new LoginPage(driver);
+
+        loginPage.loginToApplication(
+                ConfigReader.getUsername(),
+                ConfigReader.getPassword()
+        );
+
         String title = driver.getTitle();
 
         Assert.assertNotNull(title);
@@ -37,6 +55,13 @@ public class AccountTest extends BaseTest {
 
     @Test
     public void verifyBackNavigationTest() {
+
+        LoginPage loginPage = new LoginPage(driver);
+
+        loginPage.loginToApplication(
+                ConfigReader.getUsername(),
+                ConfigReader.getPassword()
+        );
 
         driver.navigate().back();
 
