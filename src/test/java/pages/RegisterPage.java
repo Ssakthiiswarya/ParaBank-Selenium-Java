@@ -4,9 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class RegisterPage {
-
     WebDriver driver;
-
     public RegisterPage(WebDriver driver) {
         this.driver = driver;
     }
@@ -40,7 +38,6 @@ public class RegisterPage {
     public void clickRegisterLink() {
         driver.findElement(registerLink).click();
     }
-
     public void registerUser(String fname, String lname, String addr,
                              String cityName, String stateName,
                              String zip, String phoneNum,

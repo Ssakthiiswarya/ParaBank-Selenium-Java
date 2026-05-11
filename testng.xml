@@ -3,13 +3,10 @@
 <suite name="ParaBank Test Suite">
 
     <listeners>
-
         <listener class-name="listeners.TestListener"/>
-
     </listeners>
 
     <test name="ParaBank Automation Tests">
-
         <classes>
 
             <class name="tests.LoginTest"/>
@@ -25,9 +22,6 @@
             <class name="tests.TransactionTest"/>
 
             <class name="tests.FormValidationTest"/>
-
         </classes>
-
     </test>
-
 </suite>

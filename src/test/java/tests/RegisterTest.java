@@ -9,11 +9,8 @@ public class RegisterTest extends BaseTest {
 
     @Test
     public void userRegistrationTest() {
-
         RegisterPage registerPage = new RegisterPage(driver);
-
         registerPage.clickRegisterLink();
-
         registerPage.registerUser(
                 "Ishu",
                 "S",
@@ -26,7 +23,6 @@ public class RegisterTest extends BaseTest {
                 "ishu" + System.currentTimeMillis(),
                 "ishu123"
         );
-
         Assert.assertTrue(driver.getPageSource().contains("Welcome"));
     }
 }

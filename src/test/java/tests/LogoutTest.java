@@ -10,16 +10,13 @@ public class LogoutTest extends BaseTest {
 
     @Test
     public void verifyLogoutTest() {
-
         LoginPage loginPage = new LoginPage(driver);
-
         loginPage.loginToApplication(
                 ConfigReader.getUsername(),
                 ConfigReader.getPassword()
         );
 
         loginPage.clickLogout();
-
         Assert.assertTrue(driver.getCurrentUrl().contains("index"));
     }
 }

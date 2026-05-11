@@ -16,14 +16,14 @@
 
     <dependencies>
 
-        <!-- Selenium -->
+
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
             <version>4.18.1</version>
         </dependency>
 
-        <!-- TestNG -->
+
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
@@ -31,7 +31,7 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- WebDriverManager -->
+
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>

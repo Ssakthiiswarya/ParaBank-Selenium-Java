@@ -10,37 +10,25 @@ import utilities.ConfigReader;
 
 
 public class BaseTest {
-
     protected WebDriver driver;
 
     @BeforeMethod
     public void openBrowser() {
-
         String browser = ConfigReader.getBrowser();
-
         if (browser.equalsIgnoreCase("chrome")) {
-
             WebDriverManager.chromedriver().setup();
-
             driver = new ChromeDriver();
-
         } else {
-
             WebDriverManager.firefoxdriver().setup();
-
             driver = new FirefoxDriver();
         }
-
         driver.manage().window().maximize();
-
         driver.get(ConfigReader.getBaseUrl());
     }
 
     @AfterMethod
     public void closeBrowser() {
-
         if (driver != null) {
-
             driver.quit();
         }
     }

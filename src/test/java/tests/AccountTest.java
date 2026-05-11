@@ -10,31 +10,25 @@ public class AccountTest extends BaseTest {
 
     @Test
     public void verifyAccountOverviewTest() {
-
         LoginPage loginPage = new LoginPage(driver);
-
         loginPage.loginToApplication(
                 ConfigReader.getUsername(),
                 ConfigReader.getPassword()
         );
 
         String currentUrl = driver.getCurrentUrl();
-
         Assert.assertNotNull(currentUrl);
     }
 
     @Test
     public void verifyAccountNumberAndBalanceTest() {
-
         LoginPage loginPage = new LoginPage(driver);
-
         loginPage.loginToApplication(
                 ConfigReader.getUsername(),
                 ConfigReader.getPassword()
         );
 
         String pageSource = driver.getPageSource();
-
         Assert.assertNotNull(pageSource);
     }
 
@@ -42,14 +36,12 @@ public class AccountTest extends BaseTest {
     public void verifyAccountDetailsPageTest() {
 
         LoginPage loginPage = new LoginPage(driver);
-
         loginPage.loginToApplication(
                 ConfigReader.getUsername(),
                 ConfigReader.getPassword()
         );
 
         String title = driver.getTitle();
-
         Assert.assertNotNull(title);
     }
 
@@ -57,16 +49,13 @@ public class AccountTest extends BaseTest {
     public void verifyBackNavigationTest() {
 
         LoginPage loginPage = new LoginPage(driver);
-
         loginPage.loginToApplication(
                 ConfigReader.getUsername(),
                 ConfigReader.getPassword()
         );
 
         driver.navigate().back();
-
         String currentUrl = driver.getCurrentUrl();
-
         Assert.assertNotNull(currentUrl);
     }
 }

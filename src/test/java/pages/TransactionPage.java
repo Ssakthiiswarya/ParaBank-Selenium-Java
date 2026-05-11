@@ -24,28 +24,21 @@ public class TransactionPage {
     By findByDateButton = By.id("findByDateRange");
 
     public void clickFindTransactions() {
-
         driver.findElement(findTransactionsLink).click();
     }
 
     public void searchByAmount(String amount) {
-
         driver.findElement(amountField).sendKeys(amount);
-
         driver.findElement(findByAmountButton).click();
     }
 
     public void searchByDate(String fromDate, String toDate) {
-
         driver.findElement(fromDateField).sendKeys(fromDate);
-
         driver.findElement(toDateField).sendKeys(toDate);
-
         driver.findElement(findByDateButton).click();
     }
 
     public String getPageSource() {
-
         return driver.getPageSource();
     }
 }

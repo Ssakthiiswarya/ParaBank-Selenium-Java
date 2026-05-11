@@ -13,7 +13,6 @@ public class TransferTest extends BaseTest {
     public void verifyFundTransferTest() {
 
         LoginPage loginPage = new LoginPage(driver);
-
         loginPage.loginToApplication(
                 ConfigReader.getUsername(),
                 ConfigReader.getPassword()
@@ -36,7 +35,6 @@ public class TransferTest extends BaseTest {
     public void verifyTransferredAmountTest() {
 
         LoginPage loginPage = new LoginPage(driver);
-
         loginPage.loginToApplication(
                 ConfigReader.getUsername(),
                 ConfigReader.getPassword()
@@ -59,7 +57,6 @@ public class TransferTest extends BaseTest {
     public void verifyInvalidAmountTransferTest() {
 
         LoginPage loginPage = new LoginPage(driver);
-
         loginPage.loginToApplication(
                 ConfigReader.getUsername(),
                 ConfigReader.getPassword()
@@ -82,7 +79,6 @@ public class TransferTest extends BaseTest {
     public void verifyEmptyAmountTransferTest() {
 
         LoginPage loginPage = new LoginPage(driver);
-
         loginPage.loginToApplication(
                 ConfigReader.getUsername(),
                 ConfigReader.getPassword()

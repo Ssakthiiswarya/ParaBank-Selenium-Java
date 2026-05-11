@@ -20,29 +20,23 @@ public class TransferPage {
     By successMessage = By.className("title");
 
     public void clickTransferFunds() {
-
         driver.findElement(transferFundsLink).click();
     }
 
     public void enterAmount(String amount) {
-
         driver.findElement(amountField).clear();
-
         driver.findElement(amountField).sendKeys(amount);
     }
 
     public void clickTransferButton() {
-
         driver.findElement(transferButton).click();
     }
 
     public String getSuccessMessage() {
-
         return driver.findElement(successMessage).getText();
     }
 
     public String getPageSource() {
-
         return driver.getPageSource();
     }
 }
