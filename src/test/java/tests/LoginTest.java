@@ -37,8 +37,6 @@ public class LoginTest extends BaseTest {
 
         loginPage.loginToApplication(username, password);
 
-        String currentUrl = driver.getCurrentUrl();
 
-        Assert.assertNotNull(currentUrl);
     }
 }

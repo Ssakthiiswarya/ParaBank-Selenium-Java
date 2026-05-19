@@ -18,5 +18,6 @@ public class LogoutTest extends BaseTest {
 
         loginPage.clickLogout();
         Assert.assertTrue(driver.getCurrentUrl().contains("index"));
+
     }
 }

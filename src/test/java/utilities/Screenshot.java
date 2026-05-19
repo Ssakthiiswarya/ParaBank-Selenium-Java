@@ -7,27 +7,30 @@ import org.openqa.selenium.WebDriver;
 
 import java.io.File;
 import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 public class Screenshot {
 
-    public static String captureScreenshot(WebDriver driver, String testName) {
-        String timeStamp =
-                new SimpleDateFormat("yyyyMMdd_HHmmss")
-                        .format(new Date());
-        String path =
-                "screenshots/" + testName + "_" + timeStamp + ".png";
+    public static String captureScreenshot(WebDriver driver,
+                                           String testName) {
+
         File src =
                 ((TakesScreenshot) driver)
                         .getScreenshotAs(OutputType.FILE);
+
+        String path =
+                "screenshots/" + testName + ".png";
+
         File dest = new File(path);
 
         try {
+
             FileUtils.copyFile(src, dest);
+
         } catch (IOException e) {
+
             e.printStackTrace();
         }
+
         return path;
     }
 }
